@@ -1,0 +1,18 @@
+<div class="form-container">
+  <img src="assets/logo.png" alt="Logo" class="logo">
+  <h2>Connexion</h2>
+  <form [formGroup]="conForm" (submit)="login()">
+    <div class="form-group">
+      <label for="email">Email :</label>
+      <input formControlName="email" type="email" id="email" placeholder="Veuillez saisir votre email" required name="email"/>
+    </div>
+    <div class="form-group">
+      <label for="password">Mot de passe :</label>
+      <input formControlName="password" type="password" id="password" placeholder="*****" required  name="password"/>
+    </div>
+    <button type="submit">Se connecter</button>
+  </form>
+  <div class="footer">
+    <p> © </p>
+  </div>
+</div>

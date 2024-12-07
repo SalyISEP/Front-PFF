@@ -1,0 +1,31 @@
+<!-- demande-compteur.component.html -->
+<div class="demande-compteur">
+  <h2>Demande de Compteur</h2>
+  <form []="conForm" (submit)="transaction()">
+    <!-- Champ Description -->
+    <div class="form-group">
+      <label for="description">montant</label>
+      <input formControlName="montant"placeholder="Entrez votre adresse">
+    </div>
+
+    <!-- Champ Date de paiement -->
+    <div class="form-group">
+      <label for="adresse">Quantite </label>
+      <input formControlName="montant"placeholder="Entrez votre adresse">
+    </div>
+
+    <!-- Champ Adresse -->
+    <div class="form-group">
+      <label for="adresse">Code woyofal</label>
+      <input formControlName="montant" placeholder="Entrez votre adresse">
+    </div>
+
+    <div class="form-group">
+      <label for="datePaiement">Date paiement</label>
+      <input formControlName="montant" placeholder="mmmm"/>
+    </div>
+    <!-- Bouton soumettre -->
+    <button type="submit" >Soumettre</button>
+  </form>
+
+</div>

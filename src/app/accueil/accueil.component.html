@@ -1,0 +1,61 @@
+<!-- Sidebar -->
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav mode="side" opened class="sidenav">
+    <div class="menu">
+      <button mat-button routerLink="/home">Inviter un ami à rejoindre</button>
+      <button mat-button routerLink="/demandeCompteur">Contacter le service Senelec</button>
+      <button mat-button routerLink="/consulter">Modifier votre code secret</button>
+      <button mat-button routerLink="/paiement">Se déconnecter</button>
+    </div>
+  </mat-sidenav>
+
+  <!-- Main Content -->
+  <mat-sidenav-content>
+    <!-- Header -->
+    <div class="header-0">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><a class="nav-link" routerLink="/">Accueil</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/about">À propos</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Dashboard Content -->
+    <div class="main-content">
+      <section class="features-section py-5">
+        <div class="container">
+          <div class="row text-center">
+            <div class="col-md-3 mb-4">
+              <a routerLink="/demandeur-compte" class="btn btn-block btn-light">
+                <img
+                  src="assets/images PFF/demandecompteur.jpg"
+                  alt="Demande de Compteur"
+                  class="feature-image"
+                />
+                <h3 class="card-title">Demande de Compteur</h3>
+              </a>
+            </div>
+            <div class="col-md-3 mb-4">
+              <a routerLink="/transactions" class="btn btn-block btn-light">
+                <img src="assets/images PFF/Woyofal.png" alt="Woyofal" class="feature-image" />
+                <h3 class="card-title">Paiement de Woyofal</h3>
+              </a>
+            </div>
+            <div class="col-md-3 mb-4">
+              <a routerLink="/achats" class="btn btn-block btn-light">
+                <img src="/assets/images PFF/senelec.jpg" alt="Senelec" class="feature-image" />
+                <h3 class="card-title">Paiement de Facture Fixe</h3>
+              </a>
+            </div>
+            <div class="col-md-3 mb-4">
+              <a routerLink="/payment" class="btn btn-block btn-light">
+                <img src="assets/images PFF/Consomation.jpg" alt="Consommation" class="feature-image" />
+                <h3 class="card-title">Consulter Consommation</h3>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
