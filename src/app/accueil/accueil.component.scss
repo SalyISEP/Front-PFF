@@ -1,87 +1,150 @@
-@import '~@angular/material/prebuilt-themes/indigo-pink.css';
 
-
-.sidenav-container {
-  height: 100vh;
-  display: flex;
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url('/src/assets/images/Nouveau-Logo-Senelec.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #333;
 }
-
-.sidenav {
-  width: 250px;
-  background-color: #2c3e50;
-  color: white;
-
-  .menu {
+.dashboard {
     display: flex;
     flex-direction: column;
-    padding: 10px;
+    height: 100vh;
+}
 
-    button {
+    .header {
+      background-color: green;
       color: white;
-      text-align: left;
-      margin: 10px 0;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .header-0 {
+      background-color: green;
+      color: green;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+    .header button {
+      background-color: #f44336;
+      color: white;
+      border: none;
+      padding: 8px 16px;
       font-size: 16px;
       border-radius: 5px;
-      &:hover {
-        background-color: #34495e;
-      }
+      cursor: pointer;
     }
-  }
-}
-
-.header-0 {
-  display: flex;
-  justify-content: flex-end;
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-
-  .nav-item {
-    margin-left: 20px;
-
-    .nav-link {
+    .header button:hover {
+      background-color: #d32f2f;
+    }
+    .content {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: row;
+      padding: 20px;
+      gap: 20px;
+    }
+    .menu {
+      width: 200px;
+      background-color: #ffffff;
+      box-shadow: 0 4px 8px green;
+      border-radius: 8px;
+      padding: 15px;
+    }
+    .menu button {
+      width: 100%;
+      margin-bottom: 10px;
+      background-color: green;
       color: white;
+      border: none;
+      padding: 10px 20px;
       font-size: 16px;
-      &:hover {
-        text-decoration: underline;
-      }
+      border-radius: 5px;
+      cursor: pointer;
+      text-align: left;
+      text-transform: capitalize;
     }
-  }
-}
+    .menu button:hover {
+      background-color: #19191a;
+    }
+    .main-content {
+      flex-grow: 1;
+      background-color: #ffffff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      padding: 15px;
+      position: relative;
+    }
 
-.main-content {
-  padding: 20px;
-
-  .features-section {
-    .row {
+    .chatbot {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 300px;
+      background-color: #ffffff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .chatbot-header {
+      background-color: #3f51b5;
+      color: white;
+      padding: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+    }
+    .chatbot-body {
+      padding: 10px;
+      height: 200px;
+      overflow-y: auto;
+    }
+    .chatbot-footer {
+      display: flex;
+      border-top: 1px solid #ddd;
+      padding: 10px;
+    }
+    .chatbot-footer input {
+      flex-grow: 1;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    .chatbot-footer button {
+      background-color: #3f51b5;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+    .chatbot-footer button:hover {
+      background-color: #5c6bc0;
+    }
+    .chatbot-toggle {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #3f51b5;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 20px;
       display: flex;
       justify-content: center;
-      gap: 20px;
-
-      .btn {
-        display: block;
-        text-align: center;
-        padding: 10px;
-        border: 1px solid #ddd;
-        border-radius: 10px;
-        transition: transform 0.3s, box-shadow 0.3s;
-
-        &:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .feature-image {
-          max-width: 100px;
-          height: auto;
-          margin-bottom: 10px;
-        }
-
-        .card-title {
-          font-size: 1.2rem;
-          color: #333333;
-        }
-      }
+      align-items: center;
     }
-  }
-}

@@ -2,12 +2,16 @@ import { TransactionService } from './../services/transaction.service';
 import { TransactionRequest, TransactionReponse } from './../app.models';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { LoginService } from '../services/login.service';
 import { LoginRequest } from '../app.models';  // Assurez-vous que le modèle est importé correctement
 
 @Component({
   selector: 'app-accueil',
+  standalone: true,
+  imports: [
+    RouterLink
+  ],
   templateUrl: './accueil.component.html',
   styleUrls: ['./accueil.component.scss']
 })

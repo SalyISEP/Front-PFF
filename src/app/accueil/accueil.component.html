@@ -1,61 +1,127 @@
-<!-- Sidebar -->
-<mat-sidenav-container class="sidenav-container">
-  <mat-sidenav mode="side" opened class="sidenav">
-    <div class="menu">
-      <button mat-button routerLink="/home">Inviter un ami à rejoindre</button>
-      <button mat-button routerLink="/demandeCompteur">Contacter le service Senelec</button>
-      <button mat-button routerLink="/consulter">Modifier votre code secret</button>
-      <button mat-button routerLink="/paiement">Se déconnecter</button>
-    </div>
-  </mat-sidenav>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Client</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@angular/material@13.3.9/prebuilt-themes/indigo-pink.css" rel="stylesheet">
 
-  <!-- Main Content -->
-  <mat-sidenav-content>
-    <!-- Header -->
-    <div class="header-0">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item"><a class="nav-link" routerLink="/">Accueil</a></li>
-        <li class="nav-item"><a class="nav-link" routerLink="/about">À propos</a></li>
-        <li class="nav-item"><a class="nav-link" routerLink="/contact">Contact</a></li>
-      </ul>
+  <!-- Lien CDN vers le CSS de Bootstrap -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Lien CDN vers les icônes de Bootstrap (optionnel pour certaines icônes) -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+
+</head>
+<body>
+  <!-- <div>
+    <h1>Données du Client</h1>
+    <p>{{ clientData }}</p>
+
+    <button (click)="createClient()">Créer un Client</button>
+  </div> -->
+  <div class="dashboard">
+    <div class="header">
+      <h1>Dashboard Client</h1>
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="header-0">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="#">Accueil</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">À propos</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
     </div>
 
-    <!-- Dashboard Content -->
-    <div class="main-content">
-      <section class="features-section py-5">
-        <div class="container">
-          <div class="row text-center">
-            <div class="col-md-3 mb-4">
-              <a routerLink="/demandeur-compte" class="btn btn-block btn-light">
-                <img
-                  src="assets/images PFF/demandecompteur.jpg"
-                  alt="Demande de Compteur"
-                  class="feature-image"
-                />
-                <h3 class="card-title">Demande de Compteur</h3>
-              </a>
-            </div>
-            <div class="col-md-3 mb-4">
-              <a routerLink="/transactions" class="btn btn-block btn-light">
-                <img src="assets/images PFF/Woyofal.png" alt="Woyofal" class="feature-image" />
-                <h3 class="card-title">Paiement de Woyofal</h3>
-              </a>
-            </div>
-            <div class="col-md-3 mb-4">
-              <a routerLink="/achats" class="btn btn-block btn-light">
-                <img src="/assets/images PFF/senelec.jpg" alt="Senelec" class="feature-image" />
-                <h3 class="card-title">Paiement de Facture Fixe</h3>
-              </a>
-            </div>
-            <div class="col-md-3 mb-4">
-              <a routerLink="/payment" class="btn btn-block btn-light">
-                <img src="assets/images PFF/Consomation.jpg" alt="Consommation" class="feature-image" />
-                <h3 class="card-title">Consulter Consommation</h3>
-              </a>
+    <div class="content">
+      <div class="menu">
+        <button mat-button routerLink="/home">Inviter un ami a rejoindre</button>
+        <button mat-button routerLink="/demandeCompteur">Contactez le service Senelec</button>
+        <button mat-button routerLink="/consulter">Modifier votre code secret</button>
+        <button mat-button routerLink="/paiement"> Se deconnecter</button>
+      </div>
+      <div class="main-content">
+        <!-- Contenu principal -->
+        <section class="features-section py-5">
+          <div class="container">
+            <div class="row text-center">
+              <div class="col-md-3 mb-4">
+                <a href="/consulter-consommation" class="btn btn-block btn-light" [routerLink]="['/demande']">
+                  <img src="assets/images/demandecompteur.jpg" alt="demande" style="width: 100px; height: 100px; object-fit: contain;">
+                  <h3 class="card-title" >demande de Compteur </h3>
+                </a>
+              </div>
+
+              <div class="col-md-3 mb-4">
+                <a href="" class="btn btn-block btn-light" [routerLink]="['/transaction']">
+                  <img src="assets/images/Woyofal.png" alt="demande" style="width: 100px; height: 100px; object-fit: contain;">
+                  <h3 class="card-title" >Achat de Woyofal</h3>
+                </a>
+              </div>
+              <div class="col-md-3 mb-4">
+                <a href="/achats" class="btn btn-block btn-light" [routerLink]="['/paiement']" routerLinkActive="router-link-active" >
+                  <img src="assets/images/senelec.jpg" alt="senelec" style="width: 100px; height: 100px; object-fit: contain;">
+                  <h3 class="card-title">Paiement de facture fixe</h3>
+                </a>
+              </div>
+              <div class="col-md-3 mb-4">
+                <a href="/payment" class="btn btn-block btn-light" [routerLink]="['/consulter']">
+                  <img src="assets/images/Consomation.jpg" alt="consommation" style="width: 100px; height: 100px; object-fit: contain;">
+                  <h3 class="card-title">Consulter consommation</h3>
+                </a>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </div>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+  </div>
+
+  <!-- Chatbot -->
+  <div id="chatbot" class="chatbot">
+    <div class="chatbot-header">Chat avec notre assistant</div>
+    <div class="chatbot-body" id="chatbot-body">
+      <!-- Messages du chatbot s'afficheront ici -->
+    </div>
+    <div class="chatbot-footer">
+      <input type="text" id="user-input" placeholder="Écrivez un message...">
+      <button onclick="sendMessage()">Envoyer</button>
+    </div>
+  </div>
+
+  <!-- Toggle pour afficher/masquer le chatbot -->
+  <button class="chatbot-toggle" onclick="toggleChatbot()">💬</button>
+
+  <script>
+    // Fonction pour afficher/masquer le chatbot
+    function toggleChatbot() {
+      var chatbot = document.getElementById('chatbot');
+      chatbot.style.display = (chatbot.style.display === 'none' || chatbot.style.display === '') ? 'flex' : 'none';
+    }
+
+    // Fonction pour envoyer un message
+    function sendMessage() {
+      var userInput = document.getElementById('user-input').value;
+      if (userInput.trim() !== '') {
+        // Afficher le message de l'utilisateur
+        var messageContainer = document.createElement('div');
+        messageContainer.classList.add('message', 'user');
+        messageContainer.textContent = userInput;
+        document.getElementById('chatbot-body').appendChild(messageContainer);
+
+        // Vider l'input
+        document.getElementById('user-input').value = '';
+
+        // Simuler une réponse du chatbot
+        var chatbotResponse = document.createElement('div');
+        chatbotResponse.classList.add('message', 'chatbot');
+        chatbotResponse.textContent = 'Je suis un chatbot. Vous avez dit: "' + userInput + '"';
+        document.getElementById('chatbot-body').appendChild(chatbotResponse);
+      }
+    }
+  </script>
+</body>
+</html>

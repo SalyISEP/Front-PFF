@@ -1,6 +1,6 @@
-import { DemandeReponse, DemandeRequest } from './../app.models';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { DemandeReponse, DemandeRequest } from '../app.models';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -8,16 +8,15 @@ import { Observable } from 'rxjs';
 })
 export class DemandeCompteurService {
 
-  private url = 'http://localhost:8080/api/demandeCompteur';
+  constructor( private httpClient: HttpClient) {
 
-  constructor( private HttpClient: HttpClient) {
    }
 
-   demande( demandeRequest: DemandeRequest): Observable<DemandeReponse>{
-    // url= "http://localhost:8080/api/demandeCompteur";
+   demande( demandeRequest: DemandeRequest) : Observable<DemandeReponse> {
+    const url= "http://localhost:8080/api/demandeCompteur";
     const headers= new HttpHeaders({
-      'Content-Type': 'application/json'
+      'Content-type': 'application/json'
     })
-    return this.HttpClient.post<DemandeReponse>(this.url, demandeRequest, {headers})
+    return this.httpClient.post<DemandeReponse>(url, demandeRequest, {headers} )
    }
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { TransactionService } from '../services/transaction.service';
 import { TransactionRequest } from '../app.models';
@@ -13,20 +13,19 @@ import { TransactionRequest } from '../app.models';
 })
 export class TransactionComponent {
 
-  conForm: FormGroup;
+  conForm: FormGroup= new FormGroup({
+        montant: new FormControl('', [Validators.required]),
+        quantite: new FormControl('', [Validators.required]),
+        codeWoyofal: new FormControl('', [Validators.required]),
+        date: new FormControl('', [Validators.required])
+  })
 
   constructor(
     private transactionService: TransactionService,
-    private Router: Router,
-    private fb: FormBuilder
-  ) {
-    this.conForm = this.fb.group({
-      montant: ['', [Validators.required, Validators.min(1)]],
-      quantite: ['', [Validators.required, Validators.min(1)]],
-      codeWoyofal: ['', [Validators.required, Validators.minLength(5)]],
-      date: ['', [Validators.required]],
-    });
-  }
+    private Router: Router) {}
+
+    // 
+    // });
 
   transaction() {
     // Logique de soumission du formulaire
